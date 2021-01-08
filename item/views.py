@@ -23,28 +23,16 @@ class ProductList(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class PostList(APIView):
-    def get(self, request):
-        romms = Post.objects.all()
-        serializer = PostSerializers(romms, many=True)
-        return Response(serializer.data)
+# class PostList(APIView):
+#     def get(self, request):
+#         romms = Post.objects.all()
+#         serializer = PostSerializers(romms, many=True)
+#         return Response(serializer.data)
+#
+#     def post(self, request, format=None):
+#         serializer = PostSerializers(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def post(self, request, format=None):
-        serializer = PostSerializers(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class StoreList(APIView):
-    def get(self, request):
-        romms = Store.objects.all()
-        serializer = StoreSerializers(romms, many=True)
-        return Response(serializer.data)
-
-    def post(self, request, format=None):
-        serializer = StoreSerializers(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
