@@ -14,14 +14,26 @@ class PostSerializers(serializers.ModelSerializer):
         model = Post
         fields = ('__all__')
 
-class StoreSerializers(serializers.ModelSerializer):
-
-    class Meta:
-        model = Store
-        fields = ('__all__')
+# class StoreSerializers(serializers.ModelSerializer):
+#
+#     class Meta:
+#         model = Store
+#         fields = ('__all__')
 
 class ProductCategorySerializers(serializers.ModelSerializer):
 
     class Meta:
         model = ProductCategory
+        fields = ('__all__')
+
+class TradeSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = Trade
+        fields = ('__all__')
+
+class MaterialsCategorySerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = MaterialsCategory
         fields = ('__all__')

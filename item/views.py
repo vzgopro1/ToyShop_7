@@ -23,16 +23,45 @@ class ProductList(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class PostList(APIView):
-#     def get(self, request):
-#         romms = Post.objects.all()
-#         serializer = PostSerializers(romms, many=True)
-#         return Response(serializer.data)
-#
-#     def post(self, request, format=None):
-#         serializer = PostSerializers(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_200_OK)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+class PostList(APIView):
+    def get(self, request):
+        romms = Post.objects.all()
+        serializer = PostSerializers(romms, many=True)
+        return Response(serializer.data)
 
+    def post(self, request, format=None):
+        serializer = PostSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class TradeList(APIView):
+    def get(self, request):
+        romms = Trade.objects.all()
+        serializer = TradeSerializers(romms, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = TradeSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class MaterialsCategoryList(APIView):
+    def get(self, request):
+        romms = MaterialsCategory.objects.all()
+        serializer = MaterialsCategorySerializers(romms, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = MaterialsCategorySerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def post_test(request):
+    return render(request, 'index.html', {})
