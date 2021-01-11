@@ -37,3 +37,9 @@ class MaterialsCategorySerializers(serializers.ModelSerializer):
     class Meta:
         model = MaterialsCategory
         fields = ('__all__')
+
+class Language1Serializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = Language1
+        fields = ('__all__')

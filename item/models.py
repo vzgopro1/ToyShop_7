@@ -25,9 +25,13 @@ class ProductCategory(models.Model):
 class MaterialsCategory(models.Model):
     title = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.title
+
 class Product(models.Model):
     title = models.CharField(max_length=45)
     price = models.IntegerField()
+    history = models.TextField()
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     fromAge = models.SmallIntegerField()
     mainMaterial = models.ForeignKey(MaterialsCategory, on_delete=models.CASCADE)
@@ -53,3 +57,19 @@ class Post(models.Model):
 class Trade(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     status = models.CharField(max_length=35, choices=TRADE_STATUS_CHOICES)
+
+    #SPARCLE
+
+class Language1(models.Model):
+    menu_text1 = models.CharField(max_length=25)
+    menu_text2 = models.CharField(max_length=25)
+    menu_text3 = models.CharField(max_length=25)
+    category_text = models.CharField(max_length=35)
+    category_name = models.CharField(max_length=25)
+    category_name2 = models.CharField(max_length=25)
+    category_name3 = models.CharField(max_length=25)
+    signup_text = models.CharField(max_length=35)
+    login_text = models.CharField(max_length=35)
+
+    def __str__(self):
+        return str(self.id)

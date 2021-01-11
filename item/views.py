@@ -63,5 +63,15 @@ class MaterialsCategoryList(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def post_test(request):
-    return render(request, 'index.html', {})
+class Language1List(APIView):
+    def get(self, request):
+        romms = Language1.objects.all()
+        serializer = Language1Serializers(romms, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = Language1Serializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
