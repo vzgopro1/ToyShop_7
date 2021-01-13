@@ -57,8 +57,7 @@ class Post(models.Model):
 class Trade(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     status = models.CharField(max_length=35, choices=TRADE_STATUS_CHOICES)
-
-    #SPARCLE
+    address = models.CharField(max_length=65)
 
 class Language1(models.Model):
     menu_text1 = models.CharField(max_length=25)

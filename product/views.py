@@ -5,4 +5,3 @@ def page_not_found(request, pnf):
 
 def HomePage(request):
     return render(request, 'index.html', {})
-#xwxw
