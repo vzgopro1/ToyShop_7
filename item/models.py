@@ -55,7 +55,7 @@ class Post(models.Model):
         return str(self.id)
 
 class Trade(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    # product = models.ForeignKey(Product, on_delete=models.CASCADE)
     status = models.CharField(max_length=35, choices=TRADE_STATUS_CHOICES)
     address = models.CharField(max_length=65)
 

@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from . models import *
 
 
@@ -42,4 +43,10 @@ class Language1Serializers(serializers.ModelSerializer):
 
     class Meta:
         model = Language1
+        fields = ('__all__')
+
+class LoginSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
         fields = ('__all__')

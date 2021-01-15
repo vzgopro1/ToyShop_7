@@ -6,5 +6,6 @@ urlpatterns = [
     path('Post/', ProductList.as_view()),
     path('Trade/', TradeList.as_view()),
     path('MaterialsCategory/', MaterialsCategoryList.as_view()),
-    path('Language1/', Language1List.as_view())
+    path('Language1/', Language1List.as_view()),
+    path('Login/', LoginList.as_view())
 ]

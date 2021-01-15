@@ -5,3 +5,6 @@ def page_not_found(request, pnf):
 
 def HomePage(request):
     return render(request, 'index.html', {})
+
+def loginpage(request):
+    return render(request, 'index.html', {})
